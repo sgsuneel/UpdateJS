@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Map - Foreach - Filter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. 
+                Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script type="text/javascript">
+            var array = [1,5,9,10,20,30,40,42]
+            var fruits = ['Mango','Pineapple','Apple','Papaya','Sapota','Watermelon', 'Tharbooj', 'Fruit 1', 'Fruit 2']
+
+            // MAP & FILTER both create new arrays. They do not change the actual array values
+            // So they are widely used in SPAs.
+
+            // FILTERS - filter loops through the contents it is being asked to filter. Like, it has its own inbuilt for() method
+
+            // Learn the new way to write a function
+            let newArray = array.filter(val => val % 3 === 0)
+            console.log('Numbers divisible by 3 are '+newArray)
+
+            console.log('Numbers greater than 20 are ' + array.filter(val => val > 20))
+
+            let fruitChars = fruits.filter(val => val.length > 5)
+            console.log(fruitChars)
+
+            let data = [
+                {
+                    country: 'China',
+                    population: 1409517397,
+                },
+                {
+                    country: 'India',
+                    population: 1339180127,
+                },
+                {
+                    country: 'USA',
+                    population: 324459463,
+                },
+                {
+                    country: 'Indonesia',
+                    population: 263991379,
+                }
+            ]
+
+            let countries = data.filter(val => val.population > 500000000)
+
+            console.log(countries)
+
+            // MAP - used to loop through an array
+            // very highly used in SPA - Single Page Applications to display items 
+            console.log('***** MAP *****')
+            let mArray = array.map(val => val + 5)
+
+            console.log(mArray)
+
+            let mapData = data.map(val => val.population * 2)
+
+            console.log((mapData))
+
+            // FOREACH
+            // returns individual elements of an array.
+            fruits.forEach(fruit => console.log('I like '+ fruit))
+
+        </script>
+    </body>
+</html>
